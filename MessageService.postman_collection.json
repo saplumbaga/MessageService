@@ -1,0 +1,482 @@
+{
+	"info": {
+		"_postman_id": "313efe80-974a-409c-8d1f-9852b5649ba0",
+		"name": "Message Service Copy 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "210418171318-4188fe46-3d81-4cee-a657-efd2942d86c3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"RelatedId\" : 1,\r\n    \"FromId\" : 1,\r\n    \"ToId\" : 1,\r\n    \"MessageContent\" : \"Hello World\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44375/message",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44375",
+					"path": [
+						"message"
+					],
+					"query": [
+						{
+							"key": "Code",
+							"value": null,
+							"disabled": true
+						}
+					]
+				},
+				"description": "    "
+			},
+			"response": []
+		},
+		{
+			"name": "/reply",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"MessageId\" : 1,\r\n    \"MessageContent\" : \"Hello from reply\",\r\n    \"Code\" : \"210331193401-b904dce3-b02a-4e8c-b8d4-339c1a594418\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44375/reply",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44375",
+					"path": [
+						"reply"
+					],
+					"query": [
+						{
+							"key": "Code",
+							"value": null,
+							"disabled": true
+						}
+					]
+				},
+				"description": "    "
+			},
+			"response": []
+		},
+		{
+			"name": "/message/list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"value": "210315171318-4188fe46-3d81-4cee-a657-efd2942d86c3",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44375/message/list?relatedId=1&Take=6&showDeleted=1&messageDirection=asc&startDate=2021-04-19&endDate=2021-05-30",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44375",
+					"path": [
+						"message",
+						"list"
+					],
+					"query": [
+						{
+							"key": "relatedId",
+							"value": "1"
+						},
+						{
+							"key": "LastId",
+							"value": "3",
+							"disabled": true
+						},
+						{
+							"key": "Take",
+							"value": "6"
+						},
+						{
+							"key": "term",
+							"value": "hello",
+							"disabled": true
+						},
+						{
+							"key": "ip",
+							"value": "::1",
+							"disabled": true
+						},
+						{
+							"key": "showDeleted",
+							"value": "1"
+						},
+						{
+							"key": "messageDirection",
+							"value": "asc"
+						},
+						{
+							"key": "startDate",
+							"value": "2021-04-19"
+						},
+						{
+							"key": "endDate",
+							"value": "2021-05-30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/reply",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"value": "210315171318-4188fe46-3d81-4cee-a657-efd2942d86c3",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44375/reply/?MessageId=1&Take=5&Skip=0&showDeleted=1&replyDirection=asc",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44375",
+					"path": [
+						"reply",
+						""
+					],
+					"query": [
+						{
+							"key": "MessageId",
+							"value": "1"
+						},
+						{
+							"key": "Take",
+							"value": "5"
+						},
+						{
+							"key": "Skip",
+							"value": "0"
+						},
+						{
+							"key": "term",
+							"value": "hello",
+							"disabled": true
+						},
+						{
+							"key": "ip",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "showDeleted",
+							"value": "1"
+						},
+						{
+							"key": "replyDirection",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/log",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Token",
+						"value": "210331193401-b904dce3-b02a-4e8c-b8d4-339c1a594418",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"MessageId\" : 1,\r\n    \"UserId\" : 1,\r\n    \"Action\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44375/log",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44375",
+					"path": [
+						"log"
+					],
+					"query": [
+						{
+							"key": "Code",
+							"value": null,
+							"disabled": true
+						}
+					]
+				},
+				"description": "    "
+			},
+			"response": []
+		},
+		{
+			"name": "/message/count",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"type": "text",
+						"value": "210315171318-4188fe46-3d81-4cee-a657-efd2942d86c3"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44375/message/count?relatedId=1&LastId=5&term=hello&showDeleted=1&startDate=2021-04-19&endDate=2021-05-19",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44375",
+					"path": [
+						"message",
+						"count"
+					],
+					"query": [
+						{
+							"key": "relatedId",
+							"value": "1"
+						},
+						{
+							"key": "LastId",
+							"value": "5"
+						},
+						{
+							"key": "term",
+							"value": "hello"
+						},
+						{
+							"key": "ip",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "showDeleted",
+							"value": "1"
+						},
+						{
+							"key": "startDate",
+							"value": "2021-04-19"
+						},
+						{
+							"key": "endDate",
+							"value": "2021-05-19"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/message",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Token",
+						"type": "text",
+						"value": "210315171318-4188fe46-3d81-4cee-a657-efd2942d86c3"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44375/message?id=2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44375",
+					"path": [
+						"message"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/message",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"type": "text",
+						"value": "210315171318-4188fe46-3d81-4cee-a657-efd2942d86c3"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44375/message?id=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44375",
+					"path": [
+						"message"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/message/basicinfo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"type": "text",
+						"value": "210315171318-4188fe46-3d81-4cee-a657-efd2942d86c3"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44375/message/basicinfo?id=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44375",
+					"path": [
+						"message",
+						"basicinfo"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/reply",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Token",
+						"type": "text",
+						"value": "210315171318-4188fe46-3d81-4cee-a657-efd2942d86c3"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44375/reply?id=2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44375",
+					"path": [
+						"reply"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/message/topsenders",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"value": "210315171318-4188fe46-3d81-4cee-a657-efd2942d86c3",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:44375/message/topsenders?startDate=2021-03-01&endDate=2021-05-19",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44375",
+					"path": [
+						"message",
+						"topsenders"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "take",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "startDate",
+							"value": "2021-03-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2021-05-19"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
